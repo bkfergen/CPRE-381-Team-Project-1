@@ -7,15 +7,16 @@ entity mips_alu is
   generic(N       : integer := 32);
   port(i_Data1    : in std_logic_vector(N-1 downto 0);    -- Data input 1
        i_Data2    : in std_logic_vector(N-1 downto 0);    -- Data input 2
-       i_C1       : in std_logic;                         -- Control 1 (1 = add/sub to output)
-       i_C2       : in std_logic;                         -- Control 2 (0 = add, 1 = sub)
-       i_C3       : in std_logic;                         -- Control 3 (1 = or to output)
-       i_C4       : in std_logic;                         -- Control 4 (1 = and to output)
-       i_C5       : in std_logic;                         -- Control 5 (1 = nor to output)
-       i_C6       : in std_logic;                         -- Control 6 (1 = xor to output)
-       i_C7       : in std_logic;                         -- Control 7 (1 = reql.qb to output)
-       o_Overflow : out std_logic;                         -- Overflow (1 = ovf, 0 = no ovf)
-       o_Output   : out std_logic_vector(N-1 downto 0));   -- Data output
+       i_C        : in std_logic_vector(7 downto 1);
+         -- Control(1) - (1 = add/sub to output)
+         -- Control(2) - (0 = add, 1 = sub)
+         -- Control(3) - (1 = or to output)
+         -- Control(4) - (1 = and to output)
+         -- Control(5) - (1 = nor to output)
+         -- Control(6) - (1 = xor to output)
+         -- Control(7) - (1 = reql.qb to output)
+       o_Overflow : out std_logic;                        -- Overflow (1 = ovf, 0 = no ovf)
+       o_Output   : out std_logic_vector(N-1 downto 0));  -- Data output
 
 end mips_alu;
 

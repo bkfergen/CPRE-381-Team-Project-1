@@ -20,6 +20,7 @@ R0
 R0
 R0
 R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 !s11e vcom 2021.2 2021.04, Apr 14 2021
 13
@@ -30,10 +31,10 @@ R0
 cModel Technology
 Z1 d/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src
 T_opt
-!s110 1634329342
-VhChaKNQb9ZI0i5H078R3>0
+!s110 1634330877
+V2[9^_3PNLUHYKQQ[fUL0z1
 04 11 8 work tb_mips_alu behavior 1
-=1-00133b5b2c68-6169e2fd-d2747-410f
+=1-00133b5b2c68-6169e8fd-6f53b-49b9
 Z2 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
 Z3 tCvgOpt 0
@@ -340,23 +341,23 @@ R55
 R15
 R16
 Emips_alu
-Z56 w1634328888
+Z56 w1634330706
 R49
 R5
 R6
-!i122 153
+!i122 157
 R1
 Z57 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/MIPS_ALU.vhd
 Z58 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/MIPS_ALU.vhd
 l0
 L5 1
-VfFz2@f@nhA^OmE1H;h^WQ0
-!s100 LIF[fdG8e7D2^kAk?8BU72
+V62]V[WHb7Co1fibhDY]ni3
+!s100 YFoU4BR>JJM1bgXUjZJ`h1
 R11
 33
-Z59 !s110 1634329184
+Z59 !s110 1634330718
 !i10b 1
-Z60 !s108 1634329184.000000
+Z60 !s108 1634330718.000000
 Z61 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/MIPS_ALU.vhd|
 Z62 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/MIPS_ALU.vhd|
 !i113 0
@@ -366,12 +367,12 @@ Astructural
 R49
 R5
 R6
-DEx4 work 8 mips_alu 0 22 fFz2@f@nhA^OmE1H;h^WQ0
-!i122 153
-l89
-L22 149
-V=edYcK35L[9Pa<6BhgKB22
-!s100 GRlhERJPTYgeD>?T4?5ZJ3
+DEx4 work 8 mips_alu 0 22 62]V[WHb7Co1fibhDY]ni3
+!i122 157
+l90
+L23 149
+VzSHWo4Eo^XN=H62DdHHO<0
+!s100 BYm4XR7z5je`AMLj6HED;3
 R11
 33
 R59
@@ -715,10 +716,10 @@ R110
 R15
 R16
 Etb_mips_alu
-Z111 w1634329328
+Z111 w1634330864
 R5
 R6
-!i122 156
+!i122 159
 R1
 Z112 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd
 Z113 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd
@@ -728,9 +729,9 @@ V1QU^D@317kiCijPaGl7FZ2
 !s100 ^GI_@Znbloj2@Zk6]U>9i2
 R11
 33
-Z114 !s110 1634329332
+Z114 !s110 1634330870
 !i10b 1
-Z115 !s108 1634329332.000000
+Z115 !s108 1634330870.000000
 Z116 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd|
 Z117 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd|
 !i113 0
@@ -740,11 +741,11 @@ Abehavior
 R5
 R6
 DEx4 work 11 tb_mips_alu 0 22 1QU^D@317kiCijPaGl7FZ2
-!i122 156
-l42
-L8 161
-Vk9Tn>`BU6f]T`0QNjG1460
-!s100 16XmZ@H<o8LLc0TkHYzbj3
+!i122 159
+l37
+L8 105
+VLW>4;zn5BcJLHL@[]K^m93
+!s100 O9P7@]b2aRICVC:IE[@FW2
 R11
 33
 R114
