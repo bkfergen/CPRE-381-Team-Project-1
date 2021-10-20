@@ -181,7 +181,7 @@ process(opcode, Funct)
 				Branch <= '1';
 				Jump   <= '0';
 				sign   <= '0';	
-				En_replqb <= '0';
+				En_repl.qb <= '0';
 			when "000010" => -- j
 				ALUSrc <= '0';
 				RegDst <= '0';

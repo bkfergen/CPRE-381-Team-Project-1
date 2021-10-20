@@ -64,7 +64,6 @@ begin
 wait for gCLK_HPER/2;
 ---test case 2: addi
 	s_opcode <= "001000";
-wait for gCLK_HPER/2;
 ---test case 3: repl.qb
 	s_opcode <= "011111";
 wait for gCLK_HPER/2;
