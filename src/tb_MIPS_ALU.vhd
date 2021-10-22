@@ -63,7 +63,7 @@ begin
   -- Testbench process  
   P_TB: process
   begin
-    -- run 325
+    -- run 560
     s_Data1 <= "00000000000000000000000000000000";
     s_Data2 <= "00000000000000000000000000000000";
     s_C <= "000000000";

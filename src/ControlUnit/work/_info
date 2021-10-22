@@ -1,125 +1,42 @@
 m255
 K4
 z2
-<<<<<<< HEAD
-Z0 !s99 nomlopt
-R0
-R0
-R0
-!s11e vcom 2021.2 2021.04, Apr 14 2021
-=======
 !s99 nomlopt
-!s11e MIXED_VERSIONS
->>>>>>> ccefbbfaaf3c2ff6e6c78982eca69d7e78ac493f
-13
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+!s11f vlog 2021.2 2021.04, Apr 14 2021
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-<<<<<<< HEAD
-Z1 d/home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit
-T_opt
-!s110 1634760815
-VgSkU7:FZ[ALKY8HbJjFOe2
-04 10 5 work tb_control mixed 1
-=1-00133b5b2c69-6170786f-ae51-12e2
-Z2 !s124 OEM100
-Z3 o-quiet -auto_acc_if_foreign -work work +acc
-Z4 tCvgOpt 0
-n@_opt
-Z5 OL;O;2021.2;73
-T_opt1
-!s110 1634760753
-V22I?0INE2_<<^[gVo58Uk3
-04 7 5 work control mixed 1
-=1-00133b5b2c69-61707830-d6e6e-1213
-R2
-R3
-R4
-n@_opt1
-R5
-R1
-Econtrol
-Z6 w1634760356
-Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 11
-R1
-Z9 8/home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit/control.vhd
-Z10 F/home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit/control.vhd
-l0
-L4 1
-Vajbda[8<]ATl>2UhRNdkd3
-!s100 >z3hYIFH6I:lnZ52FMkcE2
-Z11 OL;C;2021.2;73
-33
-Z12 !s110 1634760375
-!i10b 1
-Z13 !s108 1634760375.000000
-Z14 !s90 -reportprogress|300|-work|work|/home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit/control.vhd|
-Z15 !s107 /home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit/control.vhd|
-!i113 0
-Z16 o-work work
-Z17 tExplicit 1 NoCoverage 1 CvgOpt 0
-Amixed
-R7
-R8
-DEx4 work 7 control 0 22 ajbda[8<]ATl>2UhRNdkd3
-!i122 11
-l23
-L22 190
-VYCH>iGMOA1TT[@=P>T_ja1
-!s100 5k9`hPHMEX:co<zB]4b:R3
-R11
-33
-R12
-!i10b 1
-R13
-R14
-R15
-!i113 0
-R16
-R17
-Etb_control
-Z18 w1634760791
-Z19 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
-Z20 DPx4 ieee 16 std_logic_textio 0 22 8]8<fKiYoHe;_IDO3kmNH2
-R7
-R8
-!i122 20
-R1
-Z21 8/home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd
-Z22 F/home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd
-=======
 Z0 d/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit
 T_opt
-!s110 1634757666
-VzW]AV;CSE92U5Bh]a>BM33
+!s110 1634936165
+V`0JgJFH^MI5hA^DzlOK:f2
 04 10 5 work tb_control mixed 1
-=1-00133b5b2c65-61706c22-72170-234b
+=1-00133b5b2c68-61732564-e1b79-5748
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
 tCvgOpt 0
 n@_opt
 OL;O;2021.2;73
 Econtrol
-Z1 w1634757123
+Z1 w1634936056
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 3
+!i122 2
 R0
 Z4 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/control.vhd
 Z5 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/control.vhd
 l0
 L4 1
-VW[S;V>2Fe:O@oTU?oH`^@1
-!s100 m0;SLHXfPLjPQY^AimoKR0
+VNoa13MDjnoQgTI1=@3BjQ1
+!s100 8PAhb@WjmQf>4fBD?oF5=0
 Z6 OL;C;2021.2;73
 33
-Z7 !s110 1634757650
+Z7 !s110 1634936090
 !i10b 1
-Z8 !s108 1634757650.000000
+Z8 !s108 1634936090.000000
 Z9 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/control.vhd|
 Z10 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/control.vhd|
 !i113 0
@@ -128,12 +45,12 @@ Z12 tExplicit 1 NoCoverage 1 CvgOpt 0
 Amixed
 R2
 R3
-DEx4 work 7 control 0 22 W[S;V>2Fe:O@oTU?oH`^@1
-!i122 3
-l22
-L21 174
-VGV2OcmUK=Lak][zkGRchU2
-!s100 `zzd^6_GZLL]iR;Pl42Ha3
+DEx4 work 7 control 0 22 Noa13MDjnoQgTI1=@3BjQ1
+!i122 2
+l23
+L22 300
+Vf`Fg7KQ?RU5_Hgg1kdXYX2
+!s100 O:=3;K<a]z6TeMm_9V>_B3
 R6
 33
 R7
@@ -145,82 +62,47 @@ R10
 R11
 R12
 Etb_control
-R1
-Z13 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
-Z14 DPx4 ieee 16 std_logic_textio 0 22 8]8<fKiYoHe;_IDO3kmNH2
+Z13 w1634936126
+Z14 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
+Z15 DPx4 ieee 16 std_logic_textio 0 22 8]8<fKiYoHe;_IDO3kmNH2
 R2
 R3
 !i122 4
 R0
-Z15 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd
-Z16 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd
->>>>>>> ccefbbfaaf3c2ff6e6c78982eca69d7e78ac493f
+Z16 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd
+Z17 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd
 l0
 L8 1
 VBc2:S[Y0[KJ3n;[fEb?i_1
 !s100 RU1dD@2UmG_`RQ^FeUWSc1
-<<<<<<< HEAD
-R11
-33
-Z23 !s110 1634760802
-!i10b 1
-Z24 !s108 1634760802.000000
-Z25 !s90 -reportprogress|300|-work|work|/home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd|
-Z26 !s107 /home/shiyong/Documents/Cpre381_Project1/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd|
-!i113 0
-R16
-R17
-Amixed
-R19
-R20
-R7
-R8
-DEx4 work 10 tb_control 0 22 Bc2:S[Y0[KJ3n;[fEb?i_1
-!i122 20
-l43
-L13 61
-VJIdim43i?6T4bLQ2GJeW^3
-!s100 0YXA_a@2Ro;IWh^_WK2HM2
-R11
-33
-R23
-!i10b 1
-R24
-R25
-R26
-!i113 0
-R16
-R17
-=======
 R6
 33
-Z17 !s110 1634757654
+Z18 !s110 1634936156
 !i10b 1
-Z18 !s108 1634757654.000000
-Z19 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd|
-Z20 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd|
+Z19 !s108 1634936155.000000
+Z20 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd|
+Z21 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/ControlUnit/tb_control.vhd|
 !i113 0
 R11
 R12
 Amixed
-R13
 R14
+R15
 R2
 R3
 DEx4 work 10 tb_control 0 22 Bc2:S[Y0[KJ3n;[fEb?i_1
 !i122 4
-l41
-L13 55
-VQk<40kZ7Nd=`82iH2f>`B1
-!s100 :0I8=a6^YF8RhNcL==`k;0
+l43
+L13 61
+VXkKiXRCN>a5c`CJH2@h5N1
+!s100 L>lQ6VbT]m]0fhbe5@;OH0
 R6
 33
-R17
-!i10b 1
 R18
+!i10b 1
 R19
 R20
+R21
 !i113 0
 R11
 R12
->>>>>>> ccefbbfaaf3c2ff6e6c78982eca69d7e78ac493f
