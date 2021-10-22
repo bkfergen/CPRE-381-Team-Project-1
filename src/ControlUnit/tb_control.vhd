@@ -23,7 +23,8 @@ architecture mixed of tb_control is
 	MemWr	: out std_logic;
 	Branch	: out std_logic;
 	Jump	: out std_logic;
-	sign	: out std_logic);
+	sign	: out std_logic;
+	En_replqb: out std_logic);
 end component;
 
 signal s_opcode	: std_logic_vector(N-1 downto 0);
@@ -37,6 +38,7 @@ signal s_MemWr	: std_logic;
 signal s_Branch	: std_logic;
 signal s_Jump	: std_logic;
 signal s_sign	: std_logic;
+signal s_En_replqb : std_logic;
 
 begin 
  controlUnit: control
@@ -51,8 +53,8 @@ begin
 	MemWr  => s_MemWr,
 	Branch => s_Branch,
 	Jump   => s_Jump,
-	sign   => s_sign);
-
+	sign   => s_sign,
+	En_replqb => s_En_replqb);
 
 TEST: process 
 begin 
@@ -62,6 +64,10 @@ begin
 wait for gCLK_HPER/2;
 ---test case 2: addi
 	s_opcode <= "001000";
+wait for gCLK_HPER/2;
+---test case 3: repl.qb
+	s_opcode <= "011111";
+wait for gCLK_HPER/2;
 wait;
    end process;
 end mixed;

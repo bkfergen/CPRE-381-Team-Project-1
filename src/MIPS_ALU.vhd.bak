@@ -7,7 +7,7 @@ entity mips_alu is
   generic(N       : integer := 32);
   port(i_Data1    : in std_logic_vector(N-1 downto 0);    -- Data input 1
        i_Data2    : in std_logic_vector(N-1 downto 0);    -- Data input 2
-       i_C        : in std_logic_vector(7 downto 1);
+       i_C        : in std_logic_vector(9 downto 1);
          -- Control(1) - (1 = add/sub to output)
          -- Control(2) - (0 = add, 1 = sub)
          -- Control(3) - (1 = or to output)
@@ -16,6 +16,7 @@ entity mips_alu is
          -- Control(6) - (1 = xor to output)
          -- Control(7) - (1 = reql.qb to output)
          -- Control(8) - (1 = equal to zero, 0 = ne to zero)
+         -- Control(9) - (1 = slt to output)
        o_Overflow : out std_logic;                        -- Overflow (1 = ovf, 0 = no ovf)
        o_Output   : out std_logic_vector(N-1 downto 0);   -- Data output
        o_Zero     : out std_logic);                       -- Zero (1 = branch, 0 = no branch)
@@ -31,7 +32,6 @@ architecture structural of mips_alu is
          i_I2         : in std_logic_vector(N-1 downto 0);
          o_S          : out std_logic_vector(N-1 downto 0);
          o_C          : out std_logic);
-
   end component;
 
   component or_N is
@@ -94,6 +94,13 @@ architecture structural of mips_alu is
          o_O          : out std_logic);
   end component;
 
+  component slt_N is
+    generic(N         : integer := 32);
+    port(i_A          : in std_logic_vector(N-1 downto 0);
+         i_B          : in std_logic_vector(N-1 downto 0);
+         o_F          : out std_logic_vector(N-1 downto 0)); -- 0 = a not less than b, 1 = a less than b
+  end component;
+
   -- ALU Operation Outputs
   signal s_Output1 : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_Output2 : std_logic_vector(N-1 downto 0) := (others => '0');
@@ -101,12 +108,14 @@ architecture structural of mips_alu is
   signal s_Output4 : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_Output5 : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_Output6 : std_logic_vector(N-1 downto 0) := (others => '0');
+  signal s_Output7 : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Adder_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Or_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_And_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Nor_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Xor_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Replqb_Output : std_logic_vector(N-1 downto 0) := (others => '0');
+  signal s_ALU_Slt_Output : std_logic_vector(N-1 downto 0) := (others => '0');
 
   -- ALU Zero Results
   signal s_Zero1 : std_logic;
@@ -148,6 +157,11 @@ begin
   generic map(N => N)
   port map(i_A => i_Data2,
            o_F => s_ALU_Replqb_Output);
+
+  ALU_Slt: slt_N
+  port map(i_A => i_Data1,
+           i_B => i_Data2,
+           o_F => s_ALU_Slt_Output);
 
   -- DETERMINE OUTPUT
   ALU_Adder_Output_Mux: mux2t1_N
@@ -191,6 +205,13 @@ begin
            i_D0 => s_Output5,
            i_D1 => s_ALU_Replqb_Output,
            o_O => s_Output6);
+
+  ALU_Slt_Output_Mux: mux2t1_N
+  generic map(N => N)
+  port map(i_S => i_C(9),
+           i_D0 => s_Output6,
+           i_D1 => s_ALU_Slt_Output,
+           o_O => s_Output7);
 
   o_Output <= s_Output6;
 

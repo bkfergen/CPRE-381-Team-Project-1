@@ -15,7 +15,8 @@ entity control is
 	MemWr: out std_logic;
 	Branch: out std_logic;
 	Jump: out std_logic;
-	sign: out std_logic);
+	sign: out std_logic;
+	En_replqb: out std_logic);
 end control;
 
 architecture mixed of control is 
@@ -34,6 +35,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
+				En_replqb <= '0';
 			when  "100011" =>  --unsigned (addu | subu)
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -44,6 +46,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
+				En_replqb <= '0';
 			when others =>   --signed (add, and, nor, xor, or, slt, sll, srl, sra, sub, jr)
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -53,7 +56,8 @@ process(opcode, Funct)
 				MemWr  <= '0';
 				Branch <= '0';
 				Jump   <= '0';
-				sign   <= '1';		
+				sign   <= '1';
+				En_replqb <= '0';		
 				end case;		
 		else
 			case opcode is 
@@ -67,6 +71,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';
+				En_replqb <= '0';
 			when "001001" => -- addiu
 				ALUSrc <= '1';
 				RegDst <= '1';
@@ -76,7 +81,8 @@ process(opcode, Funct)
 				MemWr  <= '0';
 				Branch <= '0';
 				Jump   <= '0';
-				sign   <= '0';		
+				sign   <= '0';
+				En_replqb <= '0';		
 			when "001100" => -- andi
 				ALUSrc <= '1';
 				RegDst <= '1';
@@ -86,7 +92,8 @@ process(opcode, Funct)
 				MemWr  <= '0';
 				Branch <= '0';
 				Jump   <= '0';
-				sign   <= '1';		
+				sign   <= '1';	
+				En_replqb <= '0';	
 			when "001111" => -- lui 
 				ALUSrc <= '1';
 				RegDst <= '1';
@@ -96,7 +103,8 @@ process(opcode, Funct)
 				MemWr  <= '0';
 				Branch <= '0';
 				Jump   <= '0';
-				sign   <= '0';		
+				sign   <= '0';	
+				En_replqb <= '0';	
 			when "100011" => -- lw
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -107,6 +115,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';	
+				En_replqb <= '0';
 			when "001110" => -- xori
 				ALUSrc <= '1';
 				RegDst <= '1';
@@ -117,6 +126,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';	--zeroExt because ori is zeroExt 
+				En_replqb <= '0';
 			when "001101" => -- ori
 				ALUSrc <= '1';
 				RegDst <= '1';
@@ -127,6 +137,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
+				En_replqb <= '0';
 			when "001010" => -- slti
 				ALUSrc <= '1';
 				RegDst <= '1';
@@ -137,6 +148,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';		
+				En_replqb <= '0';
 			when "101011" => -- sw
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -147,6 +159,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';		
+				En_replqb <= '0';
 			when "000100" => -- beq
 				ALUSrc <= '0';
 				RegDst <= '0';
@@ -157,6 +170,7 @@ process(opcode, Funct)
 				Branch <= '1';
 				Jump   <= '0';
 				sign   <= '0';		
+				En_replqb <= '0';
 			when "000101" => -- bne
 				ALUSrc <= '0';
 				RegDst <= '0';
@@ -167,6 +181,7 @@ process(opcode, Funct)
 				Branch <= '1';
 				Jump   <= '0';
 				sign   <= '0';	
+				En_replqb <= '0';
 			when "000010" => -- j
 				ALUSrc <= '0';
 				RegDst <= '0';
@@ -177,6 +192,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '1';
 				sign   <= '0';		
+				En_replqb <= '0';
 			when "011111" => -- repl.qb
 				ALUSrc <= '1';
 				RegDst <= '1';
@@ -187,6 +203,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';
+				En_replqb <= '1';
 			when OTHERS => NULL;
 			end case;
 		end if;
