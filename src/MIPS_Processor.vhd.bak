@@ -171,8 +171,8 @@ begin
     i_RST => iRST,
     i_WE => s_RegWr,
     i_D => s_RegWrData,
-    i_ReadA => *s_RS,
-    i_ReadB => *s_RT,
+    i_ReadA => *i_RS,
+    i_ReadB => *i_RT,
     i_Write => s_RegWrAddr,
     o_A => s_Data1,
     o_B => s_Data2Reg);
