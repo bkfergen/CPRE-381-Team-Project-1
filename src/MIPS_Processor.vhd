@@ -125,15 +125,30 @@ architecture structure of MIPS_Processor is
          o_O          : out std_logic_vector(N-1 downto 0));
   end component;
 
+  component extender is
+    port(i_SignExtend : in std_logic;     -- 0 = zero extended, 1 = sign extended
+         i_D          : in std_logic_vector(15 downto 0);     -- Data value input
+         o_Q          : out std_logic_vector(31 downto 0));   -- Data value output
+  end component;
+
+  signal s_ReadB : std_logic_vector(4 downto 0);
   signal s_Data1 : std_logic_vector(N-1 downto 0);
   signal s_Data2 : std_logic_vector(N-1 downto 0);
   signal s_Data2Reg : std_logic_vector(N-1 downto 0);
+  signal s_ExtendedImm : std_logic_vector(N-1 downto 0);
 
   signal s_ALUSrc : std_logic;
-  signal s_ALU_Op : std_logic_vector(12 downto 0);
+  signal s_MemRd : std_logic;
+  signal s_Branch : std_logic;
+  signal s_Jump : std_logic;
+  signal s_RegDst : std_logic;
+  signal s_sign : std_logic;
+  signal s_ALU_Op : std_logic_vector(12 downto 1);
 
   signal s_Zero : std_logic;
   signal s_Output : std_logic_vector(N-1 downto 0);
+
+  signal s_MemReg : std_logic;
 
 begin
 
@@ -166,38 +181,50 @@ begin
 
   -- TODO: Implement the rest of your processor below this comment! 
 
+  MIPS_Proc_WriteAddress: mux2t1_N
+  generic map(N => N)
+  port map(i_S => s_RegDst,
+           i_D0 => s_Inst(20 downto 16),
+           i_D1 => s_Inst(15 downto 11),
+           o_O => s_RegWrAddr);
+
   MIPS_RegisterFile: registerfile
   port map(i_CLK => iCLK,
     i_RST => iRST,
     i_WE => s_RegWr,
     i_D => s_RegWrData,
-    i_ReadA => *s_RS,
-    i_ReadB => *s_RT,
+    i_ReadA => s_Inst(25 downto 21),
+    i_ReadB => s_Inst(20 downto 16),
     i_Write => s_RegWrAddr,
     o_A => s_Data1,
     o_B => s_Data2Reg);
 
   MIPS_Control: control
    port map(
-    opcode => *s_opcode,
-    Funct  => *s_Funct,
+    opcode => s_Inst(31 downto 26),
+    Funct  => s_Inst(5 downto 0),
     ALUSrc => s_ALUSrc,
-    RegDst => *s_RegDst,
-    MemReg => *s_MemReg,
+    RegDst => s_RegDst,
+    MemReg => s_MemReg,
     RegWr  => s_RegWr,
-    MemRd  => *s_MemRd, 
+    MemRd  => s_MemRd, -- seems to be always the same as MemReg so potentially unnecessary?
     MemWr  => s_DMemWr,
-    Branch => *s_Branch,
-    Jump   => *s_Jump,
-    sign   => *s_sign,
+    Branch => s_Branch,
+    Jump   => s_Jump,
+    sign   => s_sign,
     ALU_Op => s_ALU_Op);
 
   MIPS_Proc_Data2: mux2t1_N
   generic map(N => N)
   port map(i_S => s_ALUSrc,
            i_D0 => s_Data2Reg,
-           i_D1 => *s_SignExtendedImm,
+           i_D1 => s_ExtendedImm,
            o_O => s_Data2);
+
+  MIPS_Extender: extender
+  port map(i_SignExtend => s_sign,
+    i_D => s_Inst(15 downto 0),
+    o_Q => s_ExtendedImm);
 
   MIPS_Proc_ALU: mips_alu
   generic map(N => 32)
@@ -207,6 +234,13 @@ begin
            o_Overflow => s_Ovfl,        -- Overflow (1 = ovf, 0 = no ovf)
            o_Output => s_Output,        -- Data output
            o_Zero => s_Zero);           -- Zero (1 = branch, 0 = no branch)
+
+  MIPS_Proc_MemToReg: mux2t1_N
+  generic map(N => N)
+  port map(i_S => s_MemReg,
+           i_D0 => s_Output,
+           i_D1 => s_DMemOut,
+           o_O => s_RegWrData);
 
 end structure;
 
