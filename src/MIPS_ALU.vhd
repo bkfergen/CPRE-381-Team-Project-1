@@ -7,7 +7,7 @@ entity mips_alu is
   generic(N       : integer := 32);
   port(i_Data1    : in std_logic_vector(N-1 downto 0);    -- Data input 1
        i_Data2    : in std_logic_vector(N-1 downto 0);    -- Data input 2
-       i_C        : in std_logic_vector(9 downto 1);
+       i_C        : in std_logic_vector(12 downto 1);
          -- Control(1) - (1 = add/sub to output)
          -- Control(2) - (0 = add, 1 = sub)
          -- Control(3) - (1 = or to output)
@@ -17,6 +17,9 @@ entity mips_alu is
          -- Control(7) - (1 = reql.qb to output)
          -- Control(8) - (1 = equal to zero, 0 = ne to zero)
          -- Control(9) - (1 = slt to output)
+         -- Control(10) - (1 = barrelshifter to output)
+         -- Control(11) - (0 = signed shift (if right), 1 = unsigned)
+         -- Control(12) - (0 = right shift, 1 = left)
        o_Overflow : out std_logic;                        -- Overflow (1 = ovf, 0 = no ovf)
        o_Output   : out std_logic_vector(N-1 downto 0);   -- Data output
        o_Zero     : out std_logic);                       -- Zero (1 = branch, 0 = no branch)
@@ -101,6 +104,15 @@ architecture structural of mips_alu is
          o_F          : out std_logic_vector(N-1 downto 0)); -- 0 = a not less than b, 1 = a less than b
   end component;
 
+  component BarrelShifter is
+    generic(N        : integer := 32); -- Generic of type integer for input/output data width. Default value is 32.
+    port(i_in        : in std_logic_vector(31 downto 0);
+         i_logical   : in std_logic;
+         i_Sleft     : in std_logic;
+         i_Shamount  : in std_logic_vector(4 downto 0);
+         o_out       : out std_logic_vector(31 downto 0));
+  end component;
+
   -- ALU Operation Outputs
   signal s_Output1 : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_Output2 : std_logic_vector(N-1 downto 0) := (others => '0');
@@ -109,6 +121,7 @@ architecture structural of mips_alu is
   signal s_Output5 : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_Output6 : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_Output7 : std_logic_vector(N-1 downto 0) := (others => '0');
+  signal s_Output8 : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Adder_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Or_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_And_Output : std_logic_vector(N-1 downto 0) := (others => '0');
@@ -116,6 +129,7 @@ architecture structural of mips_alu is
   signal s_ALU_Xor_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Replqb_Output : std_logic_vector(N-1 downto 0) := (others => '0');
   signal s_ALU_Slt_Output : std_logic_vector(N-1 downto 0) := (others => '0');
+  signal s_ALU_BarrelShifter_Output : std_logic_vector(N-1 downto 0) := (others => '0');
 
   -- ALU Zero Results
   signal s_Zero1 : std_logic;
@@ -162,6 +176,14 @@ begin
   port map(i_A => i_Data1,
            i_B => i_Data2,
            o_F => s_ALU_Slt_Output);
+
+  ALU_BarrelShifter: BarrelShifter
+    generic map(N => N)
+    port map(i_in => i_Data1,
+         i_logical => i_C(11),
+         i_Sleft => i_C(12),
+         i_Shamount => i_Data2(10 downto 6), -- bits 10-6 of what would otherwise be immediate
+         o_out => s_ALU_BarrelShifter_Output);
 
   -- DETERMINE OUTPUT
   ALU_Adder_Output_Mux: mux2t1_N
@@ -213,7 +235,14 @@ begin
            i_D1 => s_ALU_Slt_Output,
            o_O => s_Output7);
 
-  o_Output <= s_Output7;
+  ALU_BarrelShifter_Output_Mux: mux2t1_N
+  generic map(N => N)
+  port map(i_S => i_C(10),
+           i_D0 => s_Output7,
+           i_D1 => s_ALU_BarrelShifter_Output,
+           o_O => s_Output8);
+
+  o_Output <= s_Output8;
 
   -------------------------------------------
 

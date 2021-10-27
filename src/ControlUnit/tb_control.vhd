@@ -24,7 +24,7 @@ architecture mixed of tb_control is
 	Branch	: out std_logic;
 	Jump	: out std_logic;
 	sign	: out std_logic;
-	ALU_Op  : out std_logic_vector(9 downto 1));
+	ALU_Op  : out std_logic_vector(12 downto 1));
 end component;
 
 signal s_opcode	: std_logic_vector(N-1 downto 0);
@@ -38,7 +38,7 @@ signal s_MemWr	: std_logic;
 signal s_Branch	: std_logic;
 signal s_Jump	: std_logic;
 signal s_sign	: std_logic;
-signal s_ALU_Op : std_logic_vector(9 downto 1);
+signal s_ALU_Op : std_logic_vector(12 downto 1);
 
 begin 
  controlUnit: control
