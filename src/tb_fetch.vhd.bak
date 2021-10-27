@@ -29,7 +29,6 @@ architecture behavior of tb_fetch is
   signal s_CLK		: std_logic;
   signal s_imm		: std_logic_vector(31 downto 0);
   signal s_Instruction 	: std_logic_vector(31 downto 0);
-  signal s_iCLK 	: std_logic;
   signal s_iRST 	: std_logic;
   signal s_ReadAddr  	: std_logic_vector(31 downto 0);
 
