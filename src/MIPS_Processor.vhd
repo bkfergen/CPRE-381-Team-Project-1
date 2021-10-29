@@ -131,6 +131,17 @@ architecture structure of MIPS_Processor is
          o_Q          : out std_logic_vector(31 downto 0));   -- Data value output
   end component;
 
+  component Fetch is 
+    port(    En		     : in std_logic;
+	     Jump_en         : in std_logic;
+	     Branch_en       : in std_logic;
+	     imm 	     : in std_logic_vector(N-1 downto 0);
+	     Instruction     : in std_logic_vector(N-1 downto 0);
+	     iCLK            : in std_logic;
+       	     iRST            : in std_logic;
+	     ReadAddr        : out std_logic_vector(N-1 downto 0));
+   end component;
+
   signal s_ReadB : std_logic_vector(4 downto 0);
   signal s_Data1 : std_logic_vector(N-1 downto 0);
   signal s_Data2 : std_logic_vector(N-1 downto 0);
@@ -157,6 +168,16 @@ begin
     s_IMemAddr <= s_NextInstAddr when '0',
       iInstAddr when others;
 
+  FetchLogic: fetch 
+    port map(
+			En 		=> '1',
+			Jump_en 	=> s_Jump,
+			Branch_en	=> s_Branch,
+			imm		=> s_ExtendedImm,
+			Instruction 	=> s_Inst,
+			iCLK		=> iCLK,
+			iRST		=> iRST,
+			ReadAddr 	=> s_IMemAddr);
 
   IMem: mem
     generic map(ADDR_WIDTH => 10,
