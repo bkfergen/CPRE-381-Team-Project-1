@@ -255,6 +255,7 @@ begin
            i_Data2 => s_Data2,          -- Data input 2
            i_C => s_ALU_Op,             -- Control
            o_Overflow => s_Ovfl,        -- Overflow (1 = ovf, 0 = no ovf)
+           o_Halt => s_Halt,            -- Halt (1 = halt, 0 = no halt)
            o_Output => s_Output,        -- Data output
            o_Zero => s_Zero);           -- Zero (1 = branch, 0 = no branch)
 

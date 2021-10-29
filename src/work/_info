@@ -560,10 +560,10 @@ R95
 R12
 R13
 Emips_processor
-Z96 w1635541921
+Z96 w1635542389
 R3
 R4
-!i122 81
+!i122 82
 R1
 Z97 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/MIPS_Processor.vhd
 Z98 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/MIPS_Processor.vhd
@@ -573,9 +573,9 @@ V=ngZB>Pk]PU^0Qfoz8fD_3
 !s100 ^i1^b5_W1>L_al]g]Ha6H1
 R7
 33
-Z99 !s110 1635541927
+Z99 !s110 1635542394
 !i10b 1
-Z100 !s108 1635541927.000000
+Z100 !s108 1635542394.000000
 Z101 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/MIPS_Processor.vhd|
 Z102 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/MIPS_Processor.vhd|
 !i113 0
@@ -585,11 +585,11 @@ Astructure
 R3
 R4
 Z103 DEx4 work 14 mips_processor 0 22 =ngZB>Pk]PU^0Qfoz8fD_3
-!i122 81
+!i122 82
 l166
-Z104 L32 239
-VBBYn8A@J4[5[Z1k=SNQ;L2
-!s100 LJR[@a0V0HzVXzkh95Ajl1
+L32 240
+Vhz^D`mFjIc=ag5LEKYdE<2
+!s100 XXGlACUDY=iSTZ4nFKNWN1
 R7
 33
 R99
@@ -601,25 +601,25 @@ R102
 R12
 R13
 Emipsdecoder
-Z105 w1632343852
+Z104 w1632343852
 R83
 R3
 R4
 !i122 58
 R1
-Z106 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mipsdecoder.vhd
-Z107 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mipsdecoder.vhd
+Z105 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mipsdecoder.vhd
+Z106 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mipsdecoder.vhd
 l0
 L5 1
 VL2UOIk_<9lFc6UImXS47D1
 !s100 ?6TD3C>3Xa>>6fbPBMH6W3
 R7
 33
-Z108 !s110 1635541294
+Z107 !s110 1635541294
 !i10b 1
-Z109 !s108 1635541294.000000
-Z110 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mipsdecoder.vhd|
-Z111 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mipsdecoder.vhd|
+Z108 !s108 1635541294.000000
+Z109 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mipsdecoder.vhd|
+Z110 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mipsdecoder.vhd|
 !i113 0
 R12
 R13
@@ -635,33 +635,33 @@ VeF=6<D00mMaER4;26h?oK3
 !s100 HGYo9h@9dUVUkj7?TS?B90
 R7
 33
-R108
+R107
 !i10b 1
+R108
 R109
 R110
-R111
 !i113 0
 R12
 R13
 Emux2t1
-Z112 w1630635314
+Z111 w1630635314
 R3
 R4
 !i122 61
 R1
-Z113 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1structural.vhd
-Z114 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1structural.vhd
+Z112 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1structural.vhd
+Z113 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1structural.vhd
 l0
 L4 1
 VNGCWX417J[_k]AShiMDXP2
 !s100 Rna79I=Tk?RCbdBRff5mH0
 R7
 33
-Z115 !s110 1635541304
+Z114 !s110 1635541304
 !i10b 1
-Z116 !s108 1635541304.000000
-Z117 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1structural.vhd|
-Z118 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1structural.vhd|
+Z115 !s108 1635541304.000000
+Z116 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1structural.vhd|
+Z117 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1structural.vhd|
 !i113 0
 R12
 R13
@@ -676,11 +676,11 @@ Vd:WEhG^PG181S5ad7hX1E0
 !s100 NJD^BkSe;o<E@M_=olN?N0
 R7
 33
-R115
+R114
 !i10b 1
+R115
 R116
 R117
-R118
 !i113 0
 R12
 R13
@@ -707,24 +707,24 @@ F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1.vhd
 R43
 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1.vhd
 Emux2t1_n
-Z119 w1579724842
+Z118 w1579724842
 R3
 R4
 !i122 60
 R1
-Z120 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1_N.vhd
-Z121 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1_N.vhd
+Z119 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1_N.vhd
+Z120 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1_N.vhd
 l0
 L21 1
 VX=8caLddO;GBDIdffNOz`3
 !s100 a8b75l9QH119Si`4JcQ1J0
 R7
 33
-Z122 !s110 1635541303
+Z121 !s110 1635541303
 !i10b 1
-Z123 !s108 1635541303.000000
-Z124 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1_N.vhd|
-Z125 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1_N.vhd|
+Z122 !s108 1635541303.000000
+Z123 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1_N.vhd|
+Z124 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux2t1_N.vhd|
 !i113 0
 R12
 R13
@@ -739,11 +739,11 @@ VS;7^3=hDiT7zH78Vm1Xhk1
 !s100 W>5MMWO2LBg`K8[P>h>Ye1
 R7
 33
-R122
+R121
 !i10b 1
+R122
 R123
 R124
-R125
 !i113 0
 R12
 R13
@@ -753,19 +753,19 @@ R3
 R4
 !i122 62
 R1
-Z126 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux32bit2t1.vhd
-Z127 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux32bit2t1.vhd
+Z125 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux32bit2t1.vhd
+Z126 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux32bit2t1.vhd
 l0
 R37
 VlQ>ILDJUMcSb6bh6zl3<H2
 !s100 N:U5CFmG>Al>RPDjj3f]`0
 R7
 33
-Z128 !s110 1635541305
+Z127 !s110 1635541305
 !i10b 1
-Z129 !s108 1635541305.000000
-Z130 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux32bit2t1.vhd|
-Z131 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux32bit2t1.vhd|
+Z128 !s108 1635541305.000000
+Z129 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux32bit2t1.vhd|
+Z130 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/mux32bit2t1.vhd|
 !i113 0
 R12
 R13
@@ -780,33 +780,33 @@ V]<Y_kYM:F6APR^^T;0F4o1
 !s100 ?OWehY8^fhi;KnXP21HA>3
 R7
 33
-R128
+R127
 !i10b 1
+R128
 R129
 R130
-R131
 !i113 0
 R12
 R13
 Enotequal_n
-Z132 w1634761661
+Z131 w1634761661
 R3
 R4
 !i122 63
 R1
-Z133 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/notequal_N.vhd
-Z134 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/notequal_N.vhd
+Z132 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/notequal_N.vhd
+Z133 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/notequal_N.vhd
 l0
 L4 1
 V6A]k3WVzAC^X0?4KN<ZDV2
 !s100 ]e=2d9A3>LXi`AT6[>nG^2
 R7
 33
-Z135 !s110 1635541307
+Z134 !s110 1635541307
 !i10b 1
-Z136 !s108 1635541307.000000
-Z137 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/notequal_N.vhd|
-Z138 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/notequal_N.vhd|
+Z135 !s108 1635541307.000000
+Z136 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/notequal_N.vhd|
+Z137 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/notequal_N.vhd|
 !i113 0
 R12
 R13
@@ -821,33 +821,33 @@ VG20aoFm]QjgV`VK3XmnHl2
 !s100 fLncDF@db64Lf@;8TS]?70
 R7
 33
-R135
+R134
 !i10b 1
+R135
 R136
 R137
-R138
 !i113 0
 R12
 R13
 Enreg
-Z139 w1632964071
+Z138 w1632964071
 R3
 R4
 !i122 64
 R1
-Z140 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/nreg.vhd
-Z141 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/nreg.vhd
+Z139 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/nreg.vhd
+Z140 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/nreg.vhd
 l0
 L4 1
 VW]LlHX;?GfUHH00CoXP;L1
 !s100 nfF^DO;X9oQomH4UMbnLD3
 R7
 33
-Z142 !s110 1635541309
+Z141 !s110 1635541309
 !i10b 1
-Z143 !s108 1635541308.000000
-Z144 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/nreg.vhd|
-Z145 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/nreg.vhd|
+Z142 !s108 1635541308.000000
+Z143 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/nreg.vhd|
+Z144 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/nreg.vhd|
 !i113 0
 R12
 R13
@@ -857,38 +857,38 @@ R4
 DEx4 work 4 nreg 0 22 W]LlHX;?GfUHH00CoXP;L1
 !i122 64
 l27
-Z146 L14 25
+Z145 L14 25
 VTOlILYPdR@ECC<XiQ`e7=0
 !s100 16LSN`<InJ`5Ll92d@4^12
 R7
 33
-R142
+R141
 !i10b 1
+R142
 R143
 R144
-R145
 !i113 0
 R12
 R13
 Eonescomp_n
-Z147 w1630911351
+Z146 w1630911351
 R3
 R4
 !i122 65
 R1
-Z148 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/OnesComplementor.vhd
-Z149 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/OnesComplementor.vhd
+Z147 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/OnesComplementor.vhd
+Z148 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/OnesComplementor.vhd
 l0
 L4 1
 VomTIPgOOY7amHQ]jROlT93
 !s100 A25i>;?fN4e=DM2JAS4We1
 R7
 33
-Z150 !s110 1635541310
+Z149 !s110 1635541310
 !i10b 1
-Z151 !s108 1635541309.000000
-Z152 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/OnesComplementor.vhd|
-Z153 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/OnesComplementor.vhd|
+Z150 !s108 1635541309.000000
+Z151 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/OnesComplementor.vhd|
+Z152 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/OnesComplementor.vhd|
 !i113 0
 R12
 R13
@@ -903,33 +903,33 @@ V<GQFDPH4_86T7;ndfcJX>0
 !s100 UYFAc5@_ASYL_PeaQ[GeC0
 R7
 33
-R150
+R149
 !i10b 1
+R150
 R151
 R152
-R153
 !i113 0
 R12
 R13
 Eor_n
-Z154 w1634156534
+Z153 w1634156534
 R3
 R4
 !i122 66
 R1
-Z155 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/or_N.vhd
-Z156 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/or_N.vhd
+Z154 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/or_N.vhd
+Z155 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/or_N.vhd
 l0
 L4 1
 V?ghlc[5E_KK[E]9O`a8eS3
 !s100 [O0TNPBGGCf:fR97OL@JL0
 R7
 33
-R150
+R149
 !i10b 1
-Z157 !s108 1635541310.000000
-Z158 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/or_N.vhd|
-Z159 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/or_N.vhd|
+Z156 !s108 1635541310.000000
+Z157 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/or_N.vhd|
+Z158 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/or_N.vhd|
 !i113 0
 R12
 R13
@@ -944,11 +944,11 @@ VO64VSJZ0Od=25EE:a1E]V1
 !s100 KZC@]Ub]RhA6O@bX]lVnP3
 R7
 33
-R150
+R149
 !i10b 1
+R156
 R157
 R158
-R159
 !i113 0
 R12
 R13
@@ -958,19 +958,19 @@ R3
 R4
 !i122 67
 R1
-Z160 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/org2.vhd
-Z161 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/org2.vhd
+Z159 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/org2.vhd
+Z160 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/org2.vhd
 l0
 R37
 V0FzB9ATDX9TV=M:n@=VB83
 !s100 bGQ1F9eW^Q17OoL9h4g7z2
 R7
 33
-Z162 !s110 1635541311
+Z161 !s110 1635541311
 !i10b 1
-Z163 !s108 1635541311.000000
-Z164 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/org2.vhd|
-Z165 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/org2.vhd|
+Z162 !s108 1635541311.000000
+Z163 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/org2.vhd|
+Z164 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/org2.vhd|
 !i113 0
 R12
 R13
@@ -985,33 +985,33 @@ V0JC>N7cRXc=9bni@>dg7o3
 !s100 h5_AzR3TdRA0a_K=dQ>mI2
 R7
 33
-R162
+R161
 !i10b 1
+R162
 R163
 R164
-R165
 !i113 0
 R12
 R13
 Epc
-Z166 w1635367629
+Z165 w1635367629
 R3
 R4
 !i122 68
 R1
-Z167 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/PC.vhd
-Z168 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/PC.vhd
+Z166 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/PC.vhd
+Z167 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/PC.vhd
 l0
 L4 1
 V;P]Rj?]3F^X4k1:4f4V7>2
 !s100 jR^>hUGTW6N71E[Sn7<jf2
 R7
 33
-Z169 !s110 1635541312
+Z168 !s110 1635541312
 !i10b 1
-Z170 !s108 1635541312.000000
-Z171 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/PC.vhd|
-Z172 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/PC.vhd|
+Z169 !s108 1635541312.000000
+Z170 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/PC.vhd|
+Z171 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/PC.vhd|
 !i113 0
 R12
 R13
@@ -1021,39 +1021,39 @@ R4
 DEx4 work 2 pc 0 22 ;P]Rj?]3F^X4k1:4f4V7>2
 !i122 68
 l18
-R146
+R145
 VS[T`cY]Sb8hJ74W1>=e5g1
 !s100 63baLmdM2ZC@^3ZhUWd1J3
 R7
 33
-R169
+R168
 !i10b 1
+R169
 R170
 R171
-R172
 !i113 0
 R12
 R13
 Eregisterfile
-Z173 w1633142019
+Z172 w1633142019
 R83
 R3
 R4
 !i122 69
 R1
-Z174 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/registerfile.vhd
-Z175 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/registerfile.vhd
+Z173 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/registerfile.vhd
+Z174 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/registerfile.vhd
 l0
 L5 1
 VNIKV0FF9]BnIzmf5^l4eP0
 !s100 cNORV;;=LW@aQS=PE76mb0
 R7
 33
-Z176 !s110 1635541313
+Z175 !s110 1635541313
 !i10b 1
-Z177 !s108 1635541313.000000
-Z178 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/registerfile.vhd|
-Z179 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/registerfile.vhd|
+Z176 !s108 1635541313.000000
+Z177 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/registerfile.vhd|
+Z178 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/registerfile.vhd|
 !i113 0
 R12
 R13
@@ -1069,34 +1069,34 @@ VGQ_PHbD9fC`d0zFm?acaZ3
 !s100 VVc7Pd8;i2g>RGH;Ec4gA3
 R7
 33
-R176
+R175
 !i10b 1
+R176
 R177
 R178
-R179
 !i113 0
 R12
 R13
 Eregmultiplexor
-Z180 w1632945747
+Z179 w1632945747
 R83
 R3
 R4
 !i122 70
 R1
-Z181 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/regmultiplexor.vhd
-Z182 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/regmultiplexor.vhd
+Z180 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/regmultiplexor.vhd
+Z181 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/regmultiplexor.vhd
 l0
 L5 1
 VUDlDT@@E2lMmH=[]=UoH01
 !s100 PGHTDeTWT=zEPb^bI<g521
 R7
 33
-Z183 !s110 1635541315
+Z182 !s110 1635541315
 !i10b 1
-Z184 !s108 1635541315.000000
-Z185 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/regmultiplexor.vhd|
-Z186 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/regmultiplexor.vhd|
+Z183 !s108 1635541315.000000
+Z184 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/regmultiplexor.vhd|
+Z185 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/regmultiplexor.vhd|
 !i113 0
 R12
 R13
@@ -1112,33 +1112,33 @@ VK<^890o7NKkO0Q@4K3KCL3
 !s100 oL_WJN9n`8LckIV=agS6c1
 R7
 33
-R183
+R182
 !i10b 1
+R183
 R184
 R185
-R186
 !i113 0
 R12
 R13
 Ereplqb_n
-Z187 w1634326569
+Z186 w1634326569
 R3
 R4
 !i122 71
 R1
-Z188 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/replqb_N.vhd
-Z189 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/replqb_N.vhd
+Z187 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/replqb_N.vhd
+Z188 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/replqb_N.vhd
 l0
 L4 1
 VRmSYVi8bo1CdUXh3GWo4W2
 !s100 1;Ri=PKfEOIlRk[JU1P3E3
 R7
 33
-Z190 !s110 1635541316
+Z189 !s110 1635541316
 !i10b 1
-R184
-Z191 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/replqb_N.vhd|
-Z192 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/replqb_N.vhd|
+R183
+Z190 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/replqb_N.vhd|
+Z191 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/replqb_N.vhd|
 !i113 0
 R12
 R13
@@ -1153,33 +1153,33 @@ V4_ZgJ_aAPoRLYO0:7g^Kl3
 !s100 [dKP]UdQ^Aa5VN`^8QcA11
 R7
 33
-R190
+R189
 !i10b 1
-R184
+R183
+R190
 R191
-R192
 !i113 0
 R12
 R13
 Eslt_n
-Z193 w1634764967
+Z192 w1634764967
 R3
 R4
 !i122 72
 R1
-Z194 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/slt_N.vhd
-Z195 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/slt_N.vhd
+Z193 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/slt_N.vhd
+Z194 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/slt_N.vhd
 l0
 L4 1
 VNzJeMX=[`CK?GzI[Kkmaz3
 !s100 gEhMlbMk[8zm?i[?8[A3O3
 R7
 33
-R190
+R189
 !i10b 1
-Z196 !s108 1635541316.000000
-Z197 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/slt_N.vhd|
-Z198 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/slt_N.vhd|
+Z195 !s108 1635541316.000000
+Z196 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/slt_N.vhd|
+Z197 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/slt_N.vhd|
 !i113 0
 R12
 R13
@@ -1194,41 +1194,41 @@ V3kRnE_9iG8:TaEA[?S0323
 !s100 fb8Qm]>AGj7DXKKB[SN`k3
 R7
 33
-R190
+R189
 !i10b 1
+R195
 R196
 R197
-R198
 !i113 0
 R12
 R13
 Etb
 R82
-Z199 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
-Z200 DPx4 ieee 16 std_logic_textio 0 22 8]8<fKiYoHe;_IDO3kmNH2
+Z198 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
+Z199 DPx4 ieee 16 std_logic_textio 0 22 8]8<fKiYoHe;_IDO3kmNH2
 R3
 R4
 !i122 73
 R1
-Z201 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb.vhd
-Z202 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb.vhd
+Z200 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb.vhd
+Z201 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb.vhd
 l0
 L25 1
 V>6S[@iEzc=M_F6P8CODdP3
 !s100 17fnb:E7lndl[EE?eR@^m0
 R7
 33
-Z203 !s110 1635541317
+Z202 !s110 1635541317
 !i10b 1
-Z204 !s108 1635541317.000000
-Z205 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb.vhd|
-Z206 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb.vhd|
+Z203 !s108 1635541317.000000
+Z204 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb.vhd|
+Z205 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb.vhd|
 !i113 0
 R12
 R13
 Amixed
+R198
 R199
-R200
 R3
 R4
 DEx4 work 2 tb 0 22 >6S[@iEzc=M_F6P8CODdP3
@@ -1239,41 +1239,41 @@ VU?<I>Gh7[TiWBf@<G1T@B2
 !s100 g^V]cM>FQoOPO8]NL03im1
 R7
 33
-R203
+R202
 !i10b 1
+R203
 R204
 R205
-R206
 !i113 0
 R12
 R13
 Etb_control
-Z207 w1635359950
+Z206 w1635359950
+R198
 R199
-R200
 R3
 R4
 !i122 74
 R1
-Z208 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_control.vhd
-Z209 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_control.vhd
+Z207 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_control.vhd
+Z208 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_control.vhd
 l0
 L8 1
 VBc2:S[Y0[KJ3n;[fEb?i_1
 !s100 RU1dD@2UmG_`RQ^FeUWSc1
 R7
 33
-Z210 !s110 1635541318
+Z209 !s110 1635541318
 !i10b 1
-Z211 !s108 1635541318.000000
-Z212 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_control.vhd|
-Z213 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_control.vhd|
+Z210 !s108 1635541318.000000
+Z211 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_control.vhd|
+Z212 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_control.vhd|
 !i113 0
 R12
 R13
 Amixed
+R198
 R199
-R200
 R3
 R4
 DEx4 work 10 tb_control 0 22 Bc2:S[Y0[KJ3n;[fEb?i_1
@@ -1284,33 +1284,33 @@ VihDIGKVd7Um1;>Acz9ehj3
 !s100 4[e>5Q6nR5f6NFN>5GzIO1
 R7
 33
-R210
+R209
 !i10b 1
+R210
 R211
 R212
-R213
 !i113 0
 R12
 R13
 Etb_fetch
-R166
+R165
 R3
 R4
 !i122 75
 R1
-Z214 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_fetch.vhd
-Z215 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_fetch.vhd
+Z213 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_fetch.vhd
+Z214 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_fetch.vhd
 l0
 L4 1
 V;4>zY3]ZKfC`cRghaz?292
 !s100 >oZ373c50zEOEWif]Uf:S2
 R7
 33
-Z216 !s110 1635541319
+Z215 !s110 1635541319
 !i10b 1
-Z217 !s108 1635541319.000000
-Z218 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_fetch.vhd|
-Z219 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_fetch.vhd|
+Z216 !s108 1635541319.000000
+Z217 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_fetch.vhd|
+Z218 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_fetch.vhd|
 !i113 0
 R12
 R13
@@ -1325,33 +1325,33 @@ VP>7OIdc[=5ef3TODkz2<R2
 !s100 A_O<=6:jo4UQbLaIllP]a1
 R7
 33
-R216
+R215
 !i10b 1
+R216
 R217
 R218
-R219
 !i113 0
 R12
 R13
 Etb_mips_alu
-Z220 w1635540679
+Z219 w1635540679
 R3
 R4
 !i122 76
 R1
-Z221 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd
-Z222 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd
+Z220 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd
+Z221 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd
 l0
 L4 1
 V1QU^D@317kiCijPaGl7FZ2
 !s100 ^GI_@Znbloj2@Zk6]U>9i2
 R7
 33
-Z223 !s110 1635541320
+Z222 !s110 1635541320
 !i10b 1
-Z224 !s108 1635541320.000000
-Z225 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd|
-Z226 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd|
+Z223 !s108 1635541320.000000
+Z224 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd|
+Z225 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/tb_MIPS_ALU.vhd|
 !i113 0
 R12
 R13
@@ -1366,33 +1366,33 @@ V;`9J>:]FU4OgkD8jU8h2T1
 !s100 ;BULd;X7Bml=HEg^c`M6:3
 R7
 33
-R223
+R222
 !i10b 1
+R223
 R224
 R225
-R226
 !i113 0
 R12
 R13
 Exor_n
-Z227 w1634760927
+Z226 w1634760927
 R3
 R4
 !i122 77
 R1
-Z228 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xor_N.vhd
-Z229 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xor_N.vhd
+Z227 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xor_N.vhd
+Z228 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xor_N.vhd
 l0
 L4 1
 V`F]fIMm93n_10Q4@3g=iS1
 !s100 K0fKB^m@XD;>`cIb4=AF^2
 R7
 33
-Z230 !s110 1635541321
+Z229 !s110 1635541321
 !i10b 1
-Z231 !s108 1635541321.000000
-Z232 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xor_N.vhd|
-Z233 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xor_N.vhd|
+Z230 !s108 1635541321.000000
+Z231 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xor_N.vhd|
+Z232 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xor_N.vhd|
 !i113 0
 R12
 R13
@@ -1407,33 +1407,33 @@ V0>k3Wk69LoOW3PeITjMF>3
 !s100 IH3VcK2>Uh67GVz92QX_i3
 R7
 33
-R230
+R229
 !i10b 1
+R230
 R231
 R232
-R233
 !i113 0
 R12
 R13
 Exorg2
-Z234 w1634325978
+Z233 w1634325978
 R3
 R4
 !i122 78
 R1
-Z235 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xorg2.vhd
-Z236 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xorg2.vhd
+Z234 8/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xorg2.vhd
+Z235 F/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xorg2.vhd
 l0
 R37
 VV6C:miP5l_oAXXFV_WP4`3
 !s100 [hI[mXFH4_j16U;>U1Lfn2
 R7
 33
-Z237 !s110 1635541322
+Z236 !s110 1635541322
 !i10b 1
-Z238 !s108 1635541322.000000
-Z239 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xorg2.vhd|
-Z240 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xorg2.vhd|
+Z237 !s108 1635541322.000000
+Z238 !s90 -reportprogress|300|-work|work|/home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xorg2.vhd|
+Z239 !s107 /home/bkfergen/Desktop/CPRE-381-Team-Project-1/src/xorg2.vhd|
 !i113 0
 R12
 R13
@@ -1448,11 +1448,11 @@ V0<8Ik`hGa2ooIj9K`Y3Wc0
 !s100 Z6[FAPS4fBLB`F?OO<AY72
 R7
 33
-R237
+R236
 !i10b 1
+R237
 R238
 R239
-R240
 !i113 0
 R12
 R13

@@ -179,7 +179,7 @@ begin
 			Instruction 	=> s_Inst,
 			iCLK		=> iCLK,
 			iRST		=> iRST,
-			ReadAddr 	=> s_Inst);
+			ReadAddr 	=> s_NextInstAddr);
 
   IMem: mem
     generic map(ADDR_WIDTH => 10,
