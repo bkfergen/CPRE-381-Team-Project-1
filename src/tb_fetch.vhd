@@ -59,8 +59,6 @@ begin
   -- Testbench process  
   P_TB: process
   begin
-	s_iRST 		<= '1';
-wait for cCLK_PER;
 	s_iRST 		<= '0';
 --test case1: addu $t0, $s1, $s2 -- 0x400000
 	s_En 		<= '1';

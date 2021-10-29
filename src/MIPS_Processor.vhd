@@ -91,8 +91,8 @@ architecture structure of MIPS_Processor is
 
   component control is 
   port(
-    opcode	: in std_logic_vector(N-1 downto 0);
-    Funct	: in std_logic_vector(N-1 downto 0);
+    opcode	: in std_logic_vector(5 downto 0);
+    Funct	: in std_logic_vector(5 downto 0);
     ALUSrc	: out std_logic;
     RegDst	: out std_logic;
     MemReg	: out std_logic;
@@ -182,7 +182,7 @@ begin
   -- TODO: Implement the rest of your processor below this comment! 
 
   MIPS_Proc_WriteAddress: mux2t1_N
-  generic map(N => N)
+  generic map(N => 5)
   port map(i_S => s_RegDst,
            i_D0 => s_Inst(20 downto 16),
            i_D1 => s_Inst(15 downto 11),
