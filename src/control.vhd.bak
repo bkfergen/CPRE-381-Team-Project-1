@@ -16,7 +16,7 @@ entity control is
 	Branch: out std_logic;
 	Jump: out std_logic;
 	sign: out std_logic;
-	ALU_Op: out std_logic_vector(13 downto 1));
+	ALU_Op: out std_logic_vector(12 downto 1));
 end control;
 
 architecture mixed of control is 
