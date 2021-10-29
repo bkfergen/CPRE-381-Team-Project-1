@@ -179,7 +179,7 @@ begin
 			Instruction 	=> s_Inst,
 			iCLK		=> iCLK,
 			iRST		=> iRST,
-			ReadAddr 	=> s_IMemAddr);
+			ReadAddr 	=> s_NextInstAddr);
 
   IMem: mem
     generic map(ADDR_WIDTH => 10,
@@ -257,6 +257,8 @@ begin
            o_Overflow => s_Ovfl,        -- Overflow (1 = ovf, 0 = no ovf)
            o_Output => s_Output,        -- Data output
            o_Zero => s_Zero);           -- Zero (1 = branch, 0 = no branch)
+
+  oALUOut <= s_Output;
 
   MIPS_Proc_MemToReg: mux2t1_N
   generic map(N => N)
