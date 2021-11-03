@@ -159,21 +159,27 @@ process(opcode, Funct)
 				ALU_Op <= "0000000000011";
 			when others =>   -- others, signed (jr)
 				ALUSrc <= '0';
-				RegDst <= '1';
+				RegDst <= '-';
 				MemReg <= '0';
-				RegWr  <= '1';	
+				RegWr  <= '0';	
 				MemRd  <= '0';
 				MemWr  <= '0';
 				Branch <= '0';
+<<<<<<< HEAD
+				Jump   <= '1';
+				sign   <= '0';
+				ALU_Op <= "000000000000";
+=======
 				Jump   <= '0';
 				sign   <= '1';
 				ALU_Op <= "0000000000000";
+>>>>>>> 0eee2f7f857cc17d5af499c549f92dc5c0d93ab2
 				end case;		
 		else
 			case opcode is 
 			when "001000" => -- addi
 				ALUSrc <= '1';
-				RegDst <= '1';
+				RegDst <= '0';
 				MemReg <= '0';
 				RegWr  <= '1';	
 				MemRd  <= '0';
@@ -184,7 +190,7 @@ process(opcode, Funct)
 				ALU_Op <= "0000000000001";
 			when "001001" => -- addiu
 				ALUSrc <= '1';
-				RegDst <= '1';
+				RegDst <= '0';
 				MemReg <= '0';
 				RegWr  <= '1';	
 				MemRd  <= '0';
@@ -195,7 +201,7 @@ process(opcode, Funct)
 				ALU_Op <= "0000000000001";		
 			when "001100" => -- andi
 				ALUSrc <= '1';
-				RegDst <= '1';
+				RegDst <= '0';
 				MemReg <= '0';
 				RegWr  <= '1';	
 				MemRd  <= '0';
@@ -206,7 +212,7 @@ process(opcode, Funct)
 				ALU_Op <= "0000000001000";	
 			when "001111" => -- lui 
 				ALUSrc <= '1';
-				RegDst <= '1';
+				RegDst <= '0';
 				MemReg <= '0';
 				RegWr  <= '1';	
 				MemRd  <= '0';
@@ -228,7 +234,7 @@ process(opcode, Funct)
 				ALU_Op <= "0000000000000";
 			when "001110" => -- xori
 				ALUSrc <= '1';
-				RegDst <= '1';
+				RegDst <= '0';
 				MemReg <= '0';
 				RegWr  <= '1';	
 				MemRd  <= '0';
@@ -250,7 +256,7 @@ process(opcode, Funct)
 				ALU_Op <= "0000000000100";
 			when "001010" => -- slti
 				ALUSrc <= '1';
-				RegDst <= '1';
+				RegDst <= '0';
 				MemReg <= '0';
 				RegWr  <= '1';	
 				MemRd  <= '0';
@@ -272,7 +278,7 @@ process(opcode, Funct)
 				ALU_Op <= "0000000000000";
 			when "000100" => -- beq
 				ALUSrc <= '0';
-				RegDst <= '0';
+				RegDst <= '-';
 				MemReg <= '0';
 				RegWr  <= '0';	
 				MemRd  <= '0';
@@ -283,7 +289,7 @@ process(opcode, Funct)
 				ALU_Op <= "0000010000000"; -- Output is in o_Zero
 			when "000101" => -- bne
 				ALUSrc <= '0';
-				RegDst <= '0';
+				RegDst <= '-';
 				MemReg <= '0';
 				RegWr  <= '0';	
 				MemRd  <= '0';
@@ -294,7 +300,7 @@ process(opcode, Funct)
 				ALU_Op <= "0000000000000"; -- Output is in o_Zero
 			when "000010" => -- j
 				ALUSrc <= '0';
-				RegDst <= '0';
+				RegDst <= '-';
 				MemReg <= '0';
 				RegWr  <= '0';	
 				MemRd  <= '0';
@@ -302,10 +308,25 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '1';
 				sign   <= '0';		
+<<<<<<< HEAD
+				ALU_Op <= "000000000000";
+			when "000011" => -- jal
+				ALUSrc <= '0';
+				RegDst <= '-';
+				MemReg <= '0';
+				RegWr  <= '0';	
+				MemRd  <= '0';
+				MemWr  <= '0';
+				Branch <= '0';
+				Jump   <= '1';
+				sign   <= '0';	
+				ALU_Op <= "000000000000";
+=======
 				ALU_Op <= "0000000000000";
+>>>>>>> 0eee2f7f857cc17d5af499c549f92dc5c0d93ab2
 			when "011111" => -- repl.qb
 				ALUSrc <= '1';
-				RegDst <= '1';
+				RegDst <= '0';
 				MemReg <= '0';
 				RegWr  <= '1';	
 				MemRd  <= '0';
