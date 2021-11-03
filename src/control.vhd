@@ -16,7 +16,7 @@ entity control is
 	Branch: out std_logic;
 	Jump: out std_logic;
 	sign: out std_logic;
-	ALU_Op: out std_logic_vector(12 downto 1));
+	ALU_Op: out std_logic_vector(13 downto 1));
 end control;
 
 architecture mixed of control is 
@@ -35,7 +35,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000000001";
+				ALU_Op <= "0000000000001";
 			when  "100011" =>  -- subu
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -46,7 +46,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000000011";
+				ALU_Op <= "0000000000011";
 			when  "010100" =>  -- add
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -57,7 +57,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000000001";
+				ALU_Op <= "0000000000001";
 			when  "100100" =>  -- and
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -68,7 +68,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000001000";
+				ALU_Op <= "0000000001000";
 			when  "100111" =>  -- nor
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -79,7 +79,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000010000";
+				ALU_Op <= "0000000010000";
 			when  "100110" =>  -- xor
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -90,7 +90,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000100000";
+				ALU_Op <= "0000000100000";
 			when  "100101" =>  -- or
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -101,7 +101,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000000100";
+				ALU_Op <= "0000000000100";
 			when  "101010" =>  -- slt
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -112,7 +112,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000100000000";
+				ALU_Op <= "0000100000000";
 			when  "000000" =>  -- sll
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -123,7 +123,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "111000000000";
+				ALU_Op <= "0111000000000";
 			when  "000010" =>  -- srl
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -134,7 +134,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "011000000000";
+				ALU_Op <= "0011000000000";
 			when  "000011" =>  -- sra
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -145,7 +145,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "001000000000";
+				ALU_Op <= "0001000000000";
 			when  "100010" =>  -- sub
 				ALUSrc <= '0';
 				RegDst <= '1';
@@ -156,7 +156,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000000011";
+				ALU_Op <= "0000000000011";
 			when others =>   -- others, signed (jr)
 				ALUSrc <= '0';
 				RegDst <= '-';
@@ -165,9 +165,15 @@ process(opcode, Funct)
 				MemRd  <= '0';
 				MemWr  <= '0';
 				Branch <= '0';
+<<<<<<< HEAD
 				Jump   <= '1';
 				sign   <= '0';
 				ALU_Op <= "000000000000";
+=======
+				Jump   <= '0';
+				sign   <= '1';
+				ALU_Op <= "0000000000000";
+>>>>>>> 0eee2f7f857cc17d5af499c549f92dc5c0d93ab2
 				end case;		
 		else
 			case opcode is 
@@ -181,7 +187,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';
-				ALU_Op <= "000000000001";
+				ALU_Op <= "0000000000001";
 			when "001001" => -- addiu
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -192,7 +198,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000000001";		
+				ALU_Op <= "0000000000001";		
 			when "001100" => -- andi
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -203,7 +209,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';	
-				ALU_Op <= "000000001000";	
+				ALU_Op <= "0000000001000";	
 			when "001111" => -- lui 
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -214,7 +220,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';	
-				ALU_Op <= "000000000000";	
+				ALU_Op <= "0000000000000";	
 			when "100011" => -- lw
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -225,7 +231,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';	
-				ALU_Op <= "000000000000";
+				ALU_Op <= "0000000000000";
 			when "001110" => -- xori
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -236,7 +242,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';	--zeroExt because ori is zeroExt 
-				ALU_Op <= "000000100000";
+				ALU_Op <= "0000000100000";
 			when "001101" => -- ori
 				ALUSrc <= '1';
 				RegDst <= '1';
@@ -247,7 +253,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '0';
-				ALU_Op <= "000000000100";
+				ALU_Op <= "0000000000100";
 			when "001010" => -- slti
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -258,7 +264,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';		
-				ALU_Op <= "000100000000";
+				ALU_Op <= "0000100000000";
 			when "101011" => -- sw
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -269,7 +275,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';		
-				ALU_Op <= "000000000000";
+				ALU_Op <= "0000000000000";
 			when "000100" => -- beq
 				ALUSrc <= '0';
 				RegDst <= '-';
@@ -280,7 +286,7 @@ process(opcode, Funct)
 				Branch <= '1';
 				Jump   <= '0';
 				sign   <= '0';		
-				ALU_Op <= "000010000000"; -- Output is in o_Zero
+				ALU_Op <= "0000010000000"; -- Output is in o_Zero
 			when "000101" => -- bne
 				ALUSrc <= '0';
 				RegDst <= '-';
@@ -291,7 +297,7 @@ process(opcode, Funct)
 				Branch <= '1';
 				Jump   <= '0';
 				sign   <= '0';	
-				ALU_Op <= "000000000000"; -- Output is in o_Zero
+				ALU_Op <= "0000000000000"; -- Output is in o_Zero
 			when "000010" => -- j
 				ALUSrc <= '0';
 				RegDst <= '-';
@@ -302,6 +308,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '1';
 				sign   <= '0';		
+<<<<<<< HEAD
 				ALU_Op <= "000000000000";
 			when "000011" => -- jal
 				ALUSrc <= '0';
@@ -314,6 +321,9 @@ process(opcode, Funct)
 				Jump   <= '1';
 				sign   <= '0';	
 				ALU_Op <= "000000000000";
+=======
+				ALU_Op <= "0000000000000";
+>>>>>>> 0eee2f7f857cc17d5af499c549f92dc5c0d93ab2
 			when "011111" => -- repl.qb
 				ALUSrc <= '1';
 				RegDst <= '0';
@@ -324,7 +334,18 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '0';
 				sign   <= '1';
-				ALU_Op <= "000001000000";
+				ALU_Op <= "0000001000000";
+			when "010100" => -- halt
+				ALUSrc <= '0';
+				RegDst <= '0';
+				MemReg <= '0';
+				RegWr  <= '0';	
+				MemRd  <= '0';
+				MemWr  <= '0';
+				Branch <= '0';
+				Jump   <= '0';
+				sign   <= '0';
+				ALU_Op <= "1000000000000";
 			when OTHERS => NULL;
 			end case;
 		end if;

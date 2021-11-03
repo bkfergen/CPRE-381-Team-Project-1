@@ -71,7 +71,7 @@ architecture structure of MIPS_Processor is
   generic(N       : integer := 32);
   port(i_Data1    : in std_logic_vector(N-1 downto 0);    -- Data input 1
        i_Data2    : in std_logic_vector(N-1 downto 0);    -- Data input 2
-       i_C        : in std_logic_vector(12 downto 1);
+       i_C        : in std_logic_vector(13 downto 1);
          -- Control(1) - (1 = add/sub to output)
          -- Control(2) - (0 = add, 1 = sub)
          -- Control(3) - (1 = or to output)
@@ -84,15 +84,17 @@ architecture structure of MIPS_Processor is
          -- Control(10) - (1 = barrelshifter to output)
          -- Control(11) - (0 = signed shift (if right), 1 = unsigned)
          -- Control(12) - (0 = right shift, 1 = left)
+         -- Control(13) - (1 = activate halt code)
        o_Overflow : out std_logic;                        -- Overflow (1 = ovf, 0 = no ovf)
+       o_Halt     : out std_logic;                        -- Halt (1 = halt, 0 = no halt)
        o_Output   : out std_logic_vector(N-1 downto 0);   -- Data output
        o_Zero     : out std_logic);                       -- Zero (1 = branch, 0 = no branch)
   end component;
 
   component control is 
   port(
-    opcode	: in std_logic_vector(N-1 downto 0);
-    Funct	: in std_logic_vector(N-1 downto 0);
+    opcode	: in std_logic_vector(5 downto 0);
+    Funct	: in std_logic_vector(5 downto 0);
     ALUSrc	: out std_logic;
     RegDst	: out std_logic;
     MemReg	: out std_logic;
@@ -102,7 +104,7 @@ architecture structure of MIPS_Processor is
     Branch	: out std_logic;
     Jump	: out std_logic;
     sign	: out std_logic;
-    ALU_Op  : out std_logic_vector(12 downto 1));
+    ALU_Op  : out std_logic_vector(13 downto 1));
   end component;
 
   component registerfile is
@@ -154,7 +156,7 @@ architecture structure of MIPS_Processor is
   signal s_Jump : std_logic;
   signal s_RegDst : std_logic;
   signal s_sign : std_logic;
-  signal s_ALU_Op : std_logic_vector(12 downto 1);
+  signal s_ALU_Op : std_logic_vector(13 downto 1);
 
   signal s_Zero : std_logic;
   signal s_Output : std_logic_vector(N-1 downto 0);
@@ -177,7 +179,7 @@ begin
 			Instruction 	=> s_Inst,
 			iCLK		=> iCLK,
 			iRST		=> iRST,
-			ReadAddr 	=> s_IMemAddr);
+			ReadAddr 	=> s_NextInstAddr);
 
   IMem: mem
     generic map(ADDR_WIDTH => 10,
@@ -203,7 +205,7 @@ begin
   -- TODO: Implement the rest of your processor below this comment! 
 
   MIPS_Proc_WriteAddress: mux2t1_N
-  generic map(N => N)
+  generic map(N => 5)
   port map(i_S => s_RegDst,
            i_D0 => s_Inst(20 downto 16),
            i_D1 => s_Inst(15 downto 11),
@@ -253,8 +255,11 @@ begin
            i_Data2 => s_Data2,          -- Data input 2
            i_C => s_ALU_Op,             -- Control
            o_Overflow => s_Ovfl,        -- Overflow (1 = ovf, 0 = no ovf)
+           o_Halt => s_Halt,            -- Halt (1 = halt, 0 = no halt)
            o_Output => s_Output,        -- Data output
            o_Zero => s_Zero);           -- Zero (1 = branch, 0 = no branch)
+
+  oALUOut <= s_Output;
 
   MIPS_Proc_MemToReg: mux2t1_N
   generic map(N => N)
