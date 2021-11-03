@@ -1,0 +1,12 @@
+main:
+addi $t0, $zero, 5
+loop:
+beq $t1, $t0, exit
+jal loop2
+
+
+addi $t1, $t1, 1
+j loop
+loop2:
+addi $a0, $zero, 1
+exit:
