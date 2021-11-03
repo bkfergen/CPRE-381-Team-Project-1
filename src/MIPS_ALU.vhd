@@ -7,7 +7,7 @@ entity mips_alu is
   generic(N       : integer := 32);
   port(i_Data1    : in std_logic_vector(N-1 downto 0);    -- Data input 1
        i_Data2    : in std_logic_vector(N-1 downto 0);    -- Data input 2
-       i_C        : in std_logic_vector(12 downto 1);
+       i_C        : in std_logic_vector(13 downto 1);
          -- Control(1) - (1 = add/sub to output)
          -- Control(2) - (0 = add, 1 = sub)
          -- Control(3) - (1 = or to output)
@@ -20,7 +20,9 @@ entity mips_alu is
          -- Control(10) - (1 = barrelshifter to output)
          -- Control(11) - (0 = signed shift (if right), 1 = unsigned)
          -- Control(12) - (0 = right shift, 1 = left)
+         -- Control(13) - (1 = activate halt code)
        o_Overflow : out std_logic;                        -- Overflow (1 = ovf, 0 = no ovf)
+       o_Halt     : out std_logic;                        -- Halt (1 = halt, 0 = no halt)
        o_Output   : out std_logic_vector(N-1 downto 0);   -- Data output
        o_Zero     : out std_logic);                       -- Zero (1 = branch, 0 = no branch)
 
@@ -265,5 +267,8 @@ begin
 
   o_Zero <= s_Zero1;
 
+  -------------------------------------------
+
+  o_Halt <= i_C(13);
 
 end structural;
