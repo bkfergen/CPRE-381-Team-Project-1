@@ -14,3 +14,11 @@ Traceback (most recent call last):
   File "internal/testpy/test_framework.py", line 57, in main
     input("Press Enter To Exit...")
 EOFError
+
+Exception caught at 2021-10-29 16:23:18.842204:
+Traceback (most recent call last):
+  File "internal/testpy/test_framework.py", line 238, in <module>
+    main()
+  File "internal/testpy/test_framework.py", line 57, in main
+    input("Press Enter To Exit...")
+EOFError
