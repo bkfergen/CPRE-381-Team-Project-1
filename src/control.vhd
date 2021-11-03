@@ -313,6 +313,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= '1';
 				sign   <= '0';	
+				ALU_Op <= "000000000000";
 			when "011111" => -- repl.qb
 				ALUSrc <= '1';
 				RegDst <= '0';
