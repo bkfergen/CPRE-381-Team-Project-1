@@ -15,9 +15,8 @@ mainloop:
    bne  $at, $zero, maindone  #if $at is equal to zero jump to end
 
    lui $at, 4097	      # la pseudoinstruction that loads the Arr address into $a0
-   ori $a0, $at, 16
 
-   ori $t2, $zero, $zero      #set swap back to zero
+   ori $t2, $zero, 0     #set swap back to zero
 
    jal passloop		      #jump to passloop
 
