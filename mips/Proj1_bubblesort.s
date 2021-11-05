@@ -30,7 +30,7 @@ passloop:
    lw  $s1, 0($a0)            #load Arr[i] into $s1
    lw  $s2, 4($a0)	      #load Arr[i+1] onto $s2
    slt $at, $s1, $s2 	      #if $s1 is less than $s2 set $at to 1 otherwise 0
-   bne $at, $zero, passswap   #branch if $at is not equal to $zero
+   beq $at, $zero, passswap   #branch if $at is equal to $zero
 
 passnext:
    addiu $a0, $a0, 4	      #iterate array pointer
