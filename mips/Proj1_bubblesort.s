@@ -17,7 +17,7 @@ mainloop:
    lui $at, 4097	      # la pseudoinstruction that loads the Arr address into $a0
    ori $a0, $at, 16
 
-   ori $t2, $zero, $zero      #load zero into $t3
+   ori $t2, $zero, $zero      #set swap back to zero
 
    jal passloop		      #jump to passloop
 
