@@ -9,7 +9,8 @@ main:
    ori	$t1, $zero, 0x0005    #load 5 into $t1
 
 mainloop:
-   addi $a1, $t1, -1 	      #decrement $a1
+   addi $a1, $t1, -1 	      #decrement $t1 and store in $a1
+   slt $at, $a1, $zero
    beq  $zero, $a1, maindone  #if $a1 is equal to zero jump to end
 
    lui $at, 4097	      # la pseudoinstruction that loads the Arr address into $a0
@@ -36,7 +37,7 @@ passnext:
    addiu $a0, $a0, 4	      #iterate array pointer
    addiu $a1, $a1, -1         #decrement number of loops 
 
-   slt $at, $zero, $a1	      #if $a1 is less than 0 set $at 
+   slt $at, $a1, $zero	      #if $a1 is less than 0 set $at 
    beq $at, $zero, passloop   #if $at is equal to 0 loop
 
    jr $ra		      #jump to return address	
