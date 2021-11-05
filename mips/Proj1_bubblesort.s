@@ -11,8 +11,8 @@ main:
 mainloop:
    addi $a1, $t1, -1 	      #decrement $t1 and store in $a1
 
-   slt $at, $a1, $zero
-   beq  $zero, $a1, maindone  #if $a1 is equal to zero jump to end
+   slt $at, $a1, $zero        #set $at if $a1 is less than $zero
+   bne  $at, $zero, maindone  #if $at is equal to zero jump to end
 
    lui $at, 4097	      # la pseudoinstruction that loads the Arr address into $a0
    ori $a0, $at, 16
