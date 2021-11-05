@@ -26,8 +26,6 @@ mainloop:
    addi $t1,$t1,-1            #decrement $t1
    beq $zero, $zero, mainloop #unconditional branch back to mainloop
 
-   j end		      #jump to end
-
 passloop:
    lw  $s1, 0($a0)            #load Arr[i] into $s1
    lw  $s2, 4($a0)	      #load Arr[i+1] onto $s2
