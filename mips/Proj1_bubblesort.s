@@ -51,3 +51,4 @@ maindone:
    j end
 
 end:
+   halt
