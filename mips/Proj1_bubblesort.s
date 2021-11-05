@@ -14,7 +14,7 @@ mainloop:
    slt $at, $a1, $zero        #set $at if $a1 is less than $zero
    bne  $at, $zero, maindone  #if $at is equal to zero jump to end
 
-   lui $at, 4097	      # la pseudoinstruction that loads the Arr address into $a0
+   lui $a0, 4097	      # la pseudoinstruction that loads the Arr address into $a0
 
    ori $t2, $zero, 0     #set swap back to zero
 
