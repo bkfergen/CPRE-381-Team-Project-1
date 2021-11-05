@@ -6,7 +6,7 @@ Arr:		.word 		4,3,5,1,2
 	.text
 	.global  main
 main:
-   ori	$t1, $zero, 0x0005    #load 5 into $t1
+   ori	$t1, $zero, 0x0004    #load 4 into $t1
 
 mainloop:
    addi $a1, $t1, -1 	      #decrement $t1 and store in $a1
