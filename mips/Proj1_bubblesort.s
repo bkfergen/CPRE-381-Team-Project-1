@@ -10,6 +10,7 @@ main:
 
 mainloop:
    addi $a1, $t1, -1 	      #decrement $t1 and store in $a1
+
    slt $at, $a1, $zero
    beq  $zero, $a1, maindone  #if $a1 is equal to zero jump to end
 
@@ -23,7 +24,7 @@ mainloop:
    beq $zero, $t2, maindone   #if there was no swaps we are done(jump to end)
 
    addi $t1,$t1,-1            #decrement $t1
-   beq $zero, $zero, mainloop #unconditional jump back to mainloop
+   beq $zero, $zero, mainloop #unconditional branch back to mainloop
 
    j end		      #jump to end
 
