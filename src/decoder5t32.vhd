@@ -1,26 +1,22 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity decoder5t32 is
-	generic(N: integer :=5;
-		N_r: integer :=32);
+entity mipsdecoder is
 
-  port(i_D          : in std_logic_vector(N-1 downto 0);      -- Data value input
+  port(i_A          : in std_logic_vector(4 downto 0);      -- Data value input
        i_En 	    : in std_logic;
-       o_R          : out std_logic_vector(N_r-1 downto 0)); 
+       o_F          : out std_logic_vector(31 downto 0)); 
 
-end decoder5t32;
+end mipsdecoder;
 
-architecture dataflow of decoder5t32 is
+architecture dataflow of mipsdecoder is
+
+  signal s_R : std_logic_vector(31 downto 0);
 
 begin
 
-process(i_EN, i_D) is
- begin
-  if i_EN = '1' then
-
-   with i_D select
-     o_R <= "00000000000000000000000000000001" when "00000",
+  with i_A select
+     s_R <= "00000000000000000000000000000001" when "00000",
 	    "00000000000000000000000000000010" when "00001",
 	    "00000000000000000000000000000100" when "00010",
 	    "00000000000000000000000000001000" when "00011",
@@ -53,8 +49,9 @@ process(i_EN, i_D) is
 	    "01000000000000000000000000000000" when "11110",
 	    "10000000000000000000000000000000" when "11111",
 	    "00000000000000000000000000000000" when others;
- else 
-   o_R <= "00000000000000000000000000000000";
- end if;
-end process;
+
+  with i_En select
+    o_F <= s_R when '1',
+           "00000000000000000000000000000000" when others;
+
 end dataflow;

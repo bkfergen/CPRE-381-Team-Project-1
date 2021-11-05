@@ -4,9 +4,10 @@ use IEEE.std_logic_1164.all;
 entity Fetch is 
 	generic(N: integer:= 32);
 	port(En		     : in std_logic;
-	     Jump_en         : in std_logic;
+	     Jump_en         : in std_logic_vector(1 downto 0);
 	     Branch_en       : in std_logic;
 	     imm 	     : in std_logic_vector(N-1 downto 0);
+             set_pc          : in std_logic_vector(N-1 downto 0);
 	     Instruction     : in std_logic_vector(N-1 downto 0);
 	     iCLK            : in std_logic;
        	     iRST            : in std_logic;
@@ -53,6 +54,7 @@ signal s_addOut_Branch: std_logic_vector(31 downto 0);
 signal s_addCarryOut_Branch: std_logic;
 signal s_Outmux_Branch: std_logic_vector(31 downto 0);
 signal s_Outmux_Jump: std_logic_vector(31 downto 0);
+signal s_Outmux_JumpReturn : std_logic_vector(31 downto 0);
 
 begin 
 
@@ -62,7 +64,7 @@ begin
     port map(i_CLK => iCLK,
 	     i_RST => iRST,
 	     i_WE => En,
-	     i_D => s_Outmux_Jump,
+	     i_D => s_Outmux_JumpReturn,
 	     o_Q => s_PC);
 
     PC_add4 : addsub_N
@@ -98,10 +100,17 @@ begin
 
     mux_Jump : mux2t1_N 
     port map(
-		i_S 	=> Jump_en,
+		i_S 	=> Jump_en(0),
 		i_D0	=> s_Outmux_Branch,
 		i_D1	=> s_jumpAddr,
 		o_O 	=> s_Outmux_Jump);
+
+    mux_JumpReturn : mux2t1_N 
+    port map(
+		i_S 	=> Jump_en(1),
+		i_D0	=> s_Outmux_Jump,
+		i_D1	=> set_pc,
+		o_O 	=> s_Outmux_JumpReturn);
 
 ReadAddr <= s_PC;
 

@@ -71,7 +71,7 @@ architecture structure of MIPS_Processor is
   generic(N       : integer := 32);
   port(i_Data1    : in std_logic_vector(N-1 downto 0);    -- Data input 1
        i_Data2    : in std_logic_vector(N-1 downto 0);    -- Data input 2
-       i_C        : in std_logic_vector(13 downto 1);
+       i_C        : in std_logic_vector(14 downto 1);
          -- Control(1) - (1 = add/sub to output)
          -- Control(2) - (0 = add, 1 = sub)
          -- Control(3) - (1 = or to output)
@@ -85,6 +85,7 @@ architecture structure of MIPS_Processor is
          -- Control(11) - (0 = signed shift (if right), 1 = unsigned)
          -- Control(12) - (0 = right shift, 1 = left)
          -- Control(13) - (1 = activate halt code)
+         -- Control(14) - (1 = Data2 to output. (All 0's = Data1 to output))
        o_Overflow : out std_logic;                        -- Overflow (1 = ovf, 0 = no ovf)
        o_Halt     : out std_logic;                        -- Halt (1 = halt, 0 = no halt)
        o_Output   : out std_logic_vector(N-1 downto 0);   -- Data output
@@ -96,15 +97,15 @@ architecture structure of MIPS_Processor is
     opcode	: in std_logic_vector(5 downto 0);
     Funct	: in std_logic_vector(5 downto 0);
     ALUSrc	: out std_logic;
-    RegDst	: out std_logic;
+    RegDst	: out std_logic_vector(1 downto 0);
     MemReg	: out std_logic;
     RegWr	: out std_logic;	
     MemRd	: out std_logic;
     MemWr	: out std_logic;
     Branch	: out std_logic;
-    Jump	: out std_logic;
+    Jump	: out std_logic_vector(1 downto 0);
     sign	: out std_logic;
-    ALU_Op  : out std_logic_vector(13 downto 1));
+    ALU_Op  : out std_logic_vector(14 downto 1));
   end component;
 
   component registerfile is
@@ -135,33 +136,46 @@ architecture structure of MIPS_Processor is
 
   component Fetch is 
     port(    En		     : in std_logic;
-	     Jump_en         : in std_logic;
+	     Jump_en         : in std_logic_vector(1 downto 0);
 	     Branch_en       : in std_logic;
 	     imm 	     : in std_logic_vector(N-1 downto 0);
+             set_pc          : in std_logic_vector(N-1 downto 0);
 	     Instruction     : in std_logic_vector(N-1 downto 0);
 	     iCLK            : in std_logic;
        	     iRST            : in std_logic;
 	     ReadAddr        : out std_logic_vector(N-1 downto 0));
    end component;
 
+  component andg2 is
+    port(i_A          : in std_logic;
+         i_B          : in std_logic;
+         o_F          : out std_logic);
+    end component;
+
   signal s_ReadB : std_logic_vector(4 downto 0);
   signal s_Data1 : std_logic_vector(N-1 downto 0);
   signal s_Data2 : std_logic_vector(N-1 downto 0);
+  signal s_RegARdAddr : std_logic_vector(4 downto 0);
   signal s_Data2Reg : std_logic_vector(N-1 downto 0);
   signal s_ExtendedImm : std_logic_vector(N-1 downto 0);
 
   signal s_ALUSrc : std_logic;
   signal s_MemRd : std_logic;
   signal s_Branch : std_logic;
-  signal s_Jump : std_logic;
-  signal s_RegDst : std_logic;
+  signal s_Jump : std_logic_vector(1 downto 0);
+  signal s_RegDst : std_logic_vector(1 downto 0);
   signal s_sign : std_logic;
-  signal s_ALU_Op : std_logic_vector(13 downto 1);
+  signal s_ALU_Op : std_logic_vector(14 downto 1);
 
   signal s_Zero : std_logic;
   signal s_Output : std_logic_vector(N-1 downto 0);
 
   signal s_MemReg : std_logic;
+
+  signal s_RegInstWrAddr : std_logic_vector(4 downto 0);
+  signal s_FirstData1 : std_logic_vector(31 downto 0);
+  signal s_FirstData2 : std_logic_vector(31 downto 0);
+  signal s_BranchAndZero : std_logic;
 
 begin
 
@@ -170,12 +184,18 @@ begin
     s_IMemAddr <= s_NextInstAddr when '0',
       iInstAddr when others;
 
+  BranchAndZero: andg2
+    port map(i_A => s_Branch,
+             i_B => s_Zero,
+             o_F => s_BranchAndZero);
+
   FetchLogic: fetch 
     port map(
 			En 		=> '1',
 			Jump_en 	=> s_Jump,
-			Branch_en	=> s_Branch,
+			Branch_en	=> s_BranchAndZero,
 			imm		=> s_ExtendedImm,
+                        set_pc          => s_FirstData1,
 			Instruction 	=> s_Inst,
 			iCLK		=> iCLK,
 			iRST		=> iRST,
@@ -189,6 +209,9 @@ begin
              data => iInstExt,
              we   => iInstLd,
              q    => s_Inst);
+
+  s_DMemAddr <= s_Output;
+  s_DMemData <= s_Data2Reg;
   
   DMem: mem
     generic map(ADDR_WIDTH => 10,
@@ -206,20 +229,34 @@ begin
 
   MIPS_Proc_WriteAddress: mux2t1_N
   generic map(N => 5)
-  port map(i_S => s_RegDst,
+  port map(i_S => s_RegDst(0),
            i_D0 => s_Inst(20 downto 16),
            i_D1 => s_Inst(15 downto 11),
+           o_O => s_RegInstWrAddr);
+
+  MIPS_Proc_JalWriteAddress: mux2t1_N
+  generic map(N => 5)
+  port map(i_S => s_RegDst(1),
+           i_D0 => s_RegInstWrAddr,
+           i_D1 => "11111", -- Return register
            o_O => s_RegWrAddr);
+
+  MIPS_Proc_JrReadAddress: mux2t1_N
+  generic map(N => 5)
+  port map(i_S => s_RegDst(1),
+           i_D0 => s_Inst(25 downto 21),
+           i_D1 => "11111", -- Return register
+           o_O => s_RegARdAddr);
 
   MIPS_RegisterFile: registerfile
   port map(i_CLK => iCLK,
     i_RST => iRST,
     i_WE => s_RegWr,
     i_D => s_RegWrData,
-    i_ReadA => s_Inst(25 downto 21),
+    i_ReadA => s_RegARdAddr,
     i_ReadB => s_Inst(20 downto 16),
     i_Write => s_RegWrAddr,
-    o_A => s_Data1,
+    o_A => s_FirstData1,
     o_B => s_Data2Reg);
 
   MIPS_Control: control
@@ -242,7 +279,21 @@ begin
   port map(i_S => s_ALUSrc,
            i_D0 => s_Data2Reg,
            i_D1 => s_ExtendedImm,
+           o_O => s_FirstData2);
+
+  MIPS_Proc_Data2JAL: mux2t1_N
+  generic map(N => N)
+  port map(i_S => s_RegDst(1),
+           i_D0 => s_FirstData2,
+           i_D1 => "00000000000000000000000000000100",
            o_O => s_Data2);
+
+  MIPS_Proc_Data1JAL: mux2t1_N
+  generic map(N => N)
+  port map(i_S => s_RegDst(1),
+           i_D0 => s_FirstData1,
+           i_D1 => s_IMemAddr(31 downto 0),
+           o_O => s_Data1);
 
   MIPS_Extender: extender
   port map(i_SignExtend => s_sign,
