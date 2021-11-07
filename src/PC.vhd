@@ -34,5 +34,9 @@ begin
     end if;
 
   end process;
+
+--  with i_RST select
+ --   s_Q <= x"00400000" when '1',
+--           s_D when others;
   
 end structure;

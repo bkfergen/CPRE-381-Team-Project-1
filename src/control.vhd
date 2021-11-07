@@ -348,7 +348,7 @@ process(opcode, Funct)
 				Jump   <= "00";
 				sign   <= '0';
 				ALU_Op <= "01000000000000";
-			when OTHERS => NULL;
+			when OTHERS => 
 			end case;
 		end if;
 end process;

@@ -4,7 +4,6 @@ use IEEE.std_logic_1164.all;
 entity mipsdecoder is
 
   port(i_A          : in std_logic_vector(4 downto 0);      -- Data value input
-       i_En 	    : in std_logic;
        o_F          : out std_logic_vector(31 downto 0)); 
 
 end mipsdecoder;
@@ -16,7 +15,7 @@ architecture dataflow of mipsdecoder is
 begin
 
   with i_A select
-     s_R <= "00000000000000000000000000000001" when "00000",
+     o_F <= "00000000000000000000000000000001" when "00000",
 	    "00000000000000000000000000000010" when "00001",
 	    "00000000000000000000000000000100" when "00010",
 	    "00000000000000000000000000001000" when "00011",
@@ -49,9 +48,5 @@ begin
 	    "01000000000000000000000000000000" when "11110",
 	    "10000000000000000000000000000000" when "11111",
 	    "00000000000000000000000000000000" when others;
-
-  with i_En select
-    o_F <= s_R when '1',
-           "00000000000000000000000000000000" when others;
 
 end dataflow;

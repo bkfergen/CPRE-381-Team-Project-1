@@ -25,18 +25,18 @@ begin
     s_D <= i_D when '1',
            s_Q when others;
   
-  -- This process handles the asyncrhonous reset and
-  -- synchronous write. We want to be able to reset 
-  -- our processor's registers so that we minimize
-  -- glitchy behavior on startup.
-  process (i_CLK, i_RST)
-  begin
-    if (i_RST = '1') then
-      s_Q <= x"00400000";
-    elsif (rising_edge(i_CLK)) then
-      s_Q <= s_D;
-    end if;
+--  process (i_CLK, i_RST)
+--  begin
+--    if (i_RST = '1') then
+--      s_Q <= x"00400000";
+--    elsif (rising_edge(i_CLK)) then
+--      s_Q <= s_D;
+--    end if;
 
-  end process;
+--  end process;
+
+  with i_RST select
+    s_Q <= x"00400000" when '1',
+           s_D when others;
   
 end structure;

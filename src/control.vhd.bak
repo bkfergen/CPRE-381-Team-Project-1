@@ -226,7 +226,7 @@ process(opcode, Funct)
 				Branch <= '0';
 				Jump   <= "00";
 				sign   <= '0';	
-				ALU_Op <= "00000000000000";	
+				ALU_Op <= "10000000000000";	
 			when "100011" => -- lw
 				ALUSrc <= '1';
 				RegDst <= "00";
@@ -348,7 +348,7 @@ process(opcode, Funct)
 				Jump   <= "00";
 				sign   <= '0';
 				ALU_Op <= "01000000000000";
-			when OTHERS => NULL;
+			when OTHERS => ;
 			end case;
 		end if;
 end process;

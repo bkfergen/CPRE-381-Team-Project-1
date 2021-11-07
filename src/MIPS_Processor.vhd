@@ -152,7 +152,6 @@ architecture structure of MIPS_Processor is
          o_F          : out std_logic);
     end component;
 
-  signal s_ReadB : std_logic_vector(4 downto 0);
   signal s_Data1 : std_logic_vector(N-1 downto 0);
   signal s_Data2 : std_logic_vector(N-1 downto 0);
   signal s_RegARdAddr : std_logic_vector(4 downto 0);
